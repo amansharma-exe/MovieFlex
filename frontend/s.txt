@@ -1,0 +1,3 @@
+https://vidsrc.to/embed/movie/{id}
+https://www.omdbapi.com/?t={movieName}&apikey=54373b60
+
