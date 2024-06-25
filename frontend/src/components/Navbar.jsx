@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [movieName, setMovieName] = useState("");
+  const [tvshowname,setTVShowName] = useState("")
   //const navigate = useNavigate();
 
   const handleSearch = (e) => {
@@ -16,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-800">
+    <nav className="bg-gray-800 fixed top-0 w-full">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
@@ -57,7 +58,7 @@ const Navbar = () => {
               <input
                 type="text"
                 value={movieName}
-                onChange={(e) => setMovieName(e.target.value)}
+                onChange={(e) => setTVShowName(e.target.value)}
                 placeholder="Search for TV Shows..."
                 className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               />

@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,12 +15,15 @@ root.render(
     <BrowserRouter>
       <App />
       < Navbar />
+      <main className="flex-grow pb-16 mb-4">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      </main>
+      < Footer />
     </BrowserRouter>
   </React.StrictMode>
 );

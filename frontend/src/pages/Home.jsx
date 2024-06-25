@@ -6,8 +6,14 @@ import GetTVShows from "../components/GetTVShows";
 const Home = () => {
   return (
     <div>
-      <GetMovies />
-      <GetTVShows />
+      <div className="mb-3 p-3">
+        <h1>Welcome </h1>
+      </div>
+      <div >
+        <GetMovies />
+        <GetTVShows />
+      </div>
+      
     </div>
   );
 };
