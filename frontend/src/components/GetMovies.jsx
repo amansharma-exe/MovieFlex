@@ -45,7 +45,7 @@ const GetMovies = () => {
 
   return (
     <>
-      <div className="flex gap-2 justify-center items-center mt-8">
+      <div className="flex gap-2 justify-center pt-4 items-center mt-8">
         <div>Latest Movies Collection...</div>
         
         {dataFetched && (

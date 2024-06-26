@@ -66,7 +66,7 @@ const GetTVShows = () => {
       {dataFetched && (
         <>
           <div className="flex justify-center mt-4">
-            <h3 className="text-lg">tV Shows List (Page {count}):</h3>
+            <h3 className="text-lg">TV Shows List (Page {count}):</h3>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-16 mt-4">
             {tvshowdata.map((tvshow) => (

@@ -1,17 +1,28 @@
-// src/components/Navbar.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import FetchTVShows from "./FetchTVShows";
 
 const Navbar = () => {
   const [movieName, setMovieName] = useState("");
-  const [tvshowname,setTVShowName] = useState("")
-  //const navigate = useNavigate();
+  const [tvshowname, setTVShowName] = useState("");
+  const [showTVShows, setShowTVShows] = useState(false);
+  const [showMovies, setShowMovies] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSearch = (e) => {
+  const handleSearchMovie = (e) => {
     e.preventDefault();
     if (movieName) {
-      //navigate(`/search?query=${encodeURIComponent(movieName)}`);
+      navigate(`/search?query=${encodeURIComponent(movieName)}`);
+      setShowTVShows(true);
+      return <div>Loading...</div>;
+    }
+  };
+
+  const handleSearchTV = (e) => {
+    e.preventDefault();
+    if (tvshowname) {
+      navigate(`/search?query=${encodeURIComponent(tvshowname)}`);
       return <div>Loading...</div>;
     }
   };
@@ -22,24 +33,26 @@ const Navbar = () => {
         <div className="relative flex items-center justify-between h-16">
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0">
-              <h1 className="text-white text-2xl font-bold"><Link to='/'>MovieFlex</Link></h1>
+              <h1 className="text-white text-2xl font-bold">
+                <Link to="/">MovieFlex</Link>
+              </h1>
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
                 <div className="text-gray-300 hover:bg-gray-700 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">
-                  <Link to='/home'>Home</Link>
+                  <Link to="/home">Home</Link>
                 </div>
                 <div className="text-gray-300 hover:bg-gray-700 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">
-                <Link to='/about'>About</Link>
+                  <Link to="/about">About</Link>
                 </div>
                 <div className="text-gray-300 hover:bg-gray-700 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">
-                <Link to='/contact'>Contact</Link>
+                  <Link to="/contact">Contact</Link>
                 </div>
               </div>
             </div>
           </div>
           <div className="relative flex gap-4">
-            <form onSubmit={handleSearch} className="flex">
+            <form onSubmit={handleSearchMovie} className="flex">
               <input
                 type="text"
                 value={movieName}
@@ -54,10 +67,10 @@ const Navbar = () => {
                 Search
               </button>
             </form>
-            <form onSubmit={handleSearch} className="flex">
+            <form onSubmit={handleSearchTV} className="flex">
               <input
                 type="text"
-                value={movieName}
+                value={tvshowname}
                 onChange={(e) => setTVShowName(e.target.value)}
                 placeholder="Search for TV Shows..."
                 className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
