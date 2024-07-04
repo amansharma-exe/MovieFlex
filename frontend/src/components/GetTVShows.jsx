@@ -45,13 +45,13 @@ const GetTVShows = () => {
 
   return (
     <>
-      <div className="flex gap-2 justify-center items-center mt-8">
-        <div>Latest TV Shows Collection...</div>
+      <div className="flex gap-2 justify-center items-center mt-8 ">
+        <div className="text-white">Latest TV Shows Collection...</div>
         
         {dataFetched && (
           <>
             <div>
-              <button onClick={decrementCount} className="bg-white text-blue-800 p-2 rounded ml-4">
+              <button onClick={decrementCount} className="bg-white text-blue-800 p-2 rounded ml-4 ">
                 Previous
               </button>
             </div>
@@ -66,17 +66,17 @@ const GetTVShows = () => {
       {dataFetched && (
         <>
           <div className="flex justify-center mt-4">
-            <h3 className="text-lg">TV Shows List (Page {count}):</h3>
+            <h3 className="text-lg text-white">TV Shows List (Page {count}):</h3>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-16 mt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-16 mt-4 ">
             {tvshowdata.map((tvshow) => (
-              <div key={tvshow.imdb_id} className="bg-white shadow-md rounded p-4">
-                <h4 className="text-lg font-semibold">{tvshow.title}</h4>
+              <div key={tvshow.imdb_id} className="bg-white backdrop-blur-sm bg-opacity-25 shadow-sm rounded p-4">
+                <h4 className="text-white text-lg font-semibold">{tvshow.title}</h4>
                 <a
                   href={`https://vidsrc.to/embed/tv/${tvshow.imdb_id}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline mt-2 block"
+                  className="text-white hover:underline mt-2 block"
                 >
                   Watch Now
                 </a>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+
 import "./index.css";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -28,7 +29,7 @@ const App = () => {
         <div>
           <BrowserRouter>
             <Navbar />
-            <main className="flex-grow pb-16 pt-4 mb-4">
+            <main className="flex-grow pb-16 pt-4 mb-4 bg-hero overflow">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />

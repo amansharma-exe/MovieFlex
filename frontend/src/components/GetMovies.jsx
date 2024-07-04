@@ -45,8 +45,9 @@ const GetMovies = () => {
 
   return (
     <>
-      <div className="flex gap-2 justify-center pt-4 items-center mt-8">
-        <div>Latest Movies Collection...</div>
+    
+      <div className="flex gap-2 z-50 justify-center pt-4 items-center mt-8">
+        <div className="text-white">Latest Movies Collection...</div>
         
         {dataFetched && (
           <>
@@ -66,17 +67,17 @@ const GetMovies = () => {
       {dataFetched && (
         <>
           <div className="flex justify-center mt-4">
-            <h3 className="text-lg">Movies List (Page {count}):</h3>
+            <h3 className="text-lg text-white">Movies List (Page {count}):</h3>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-16 mt-4">
             {moviedata.map((movie) => (
-              <div key={movie.imdb_id} className="bg-white shadow-md rounded p-4">
-                <h4 className="text-lg font-semibold">{movie.title}</h4>
+              <div key={movie.imdb_id} className="bg-white backdrop-blur-sm shadow-sm bg-opacity-25 rounded p-4">
+                <h4 className="text-white text-lg font-semibold">{movie.title}</h4>
                 <a
                   href={`https://vidsrc.to/embed/movie/${movie.imdb_id}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline mt-2 block"
+                  className="text-blue-50 hover:underline mt-2 block"
                 >
                   Watch Now
                 </a>
