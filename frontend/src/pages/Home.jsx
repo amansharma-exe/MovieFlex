@@ -5,7 +5,7 @@ import GetTVShows from "../components/GetTVShows";
 
 const Home = () => {
   return (
-    <div>
+    <div className="h-full w-full">
       <div className="mb-3 p-3">
         <h1> </h1>
       </div>

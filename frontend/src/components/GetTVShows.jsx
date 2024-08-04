@@ -12,12 +12,12 @@ const GetTVShows = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`https://vidsrc.to/vapi/tv/new/${count}`);
+      const response = await fetch(`https://vidsrc.xyz/tvshows/latest/page-${count}.json`);
       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }
       const data = await response.json();
-      const tvshows = data.result.items;
+      const tvshows = data.result;
       setTVShowData(tvshows);
       const ids = tvshows.map((tvshow) => tvshow.imdb_id);
       setTVShowid(ids);
@@ -73,7 +73,7 @@ const GetTVShows = () => {
               <div key={tvshow.imdb_id} className="bg-white backdrop-blur-sm bg-opacity-25 shadow-sm rounded p-4">
                 <h4 className="text-white text-lg font-semibold">{tvshow.title}</h4>
                 <a
-                  href={`https://vidsrc.to/embed/tv/${tvshow.imdb_id}`}
+                  href={`https://vidsrc.xyz/embed/tv/${tvshow.imdb_id}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:underline mt-2 block"

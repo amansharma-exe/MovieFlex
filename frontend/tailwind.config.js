@@ -7,6 +7,7 @@ module.exports = {
         'hero': "url('Images/back.jpg')",
         
         
+        
       }
     },
   },

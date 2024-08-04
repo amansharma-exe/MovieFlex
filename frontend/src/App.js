@@ -29,7 +29,7 @@ const App = () => {
         <div>
           <BrowserRouter>
             <Navbar />
-            <main className="flex-grow pb-16 pt-4 mb-4 bg-hero overflow">
+            <main className="flex-grow pb-16 pt-4 mb-4 bg-hero w-full overflow">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
